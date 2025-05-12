@@ -36,3 +36,6 @@ update clientes set IdTiDoc =2
 where IdCli =213123123;
 
 insert into color (IdCol, Col) values (4, "Rojo"), (5, "Azul"), (6, "Amarillo"), (7, "Verde"), (8, "Naranja"), (9, "Violeta"), (10, "Rosa"), (11, "Marrón"), (12, "Gris"), (13, "Negro"), (14, "Blanco"), (15, "Turquesa"), (16, "Celeste"), (17, "Beige"), (18, "Coral"), (19, "Fucsia"), (20, "Esmeralda"), (21, "Cian"), (22, "Magenta"), (23, "Mostaza"), (24, "Lavanda"), (25, "Azul marino"), (26, "Verde oliva"), (27, "Terracota"), (28, "Borgoña"), (29, "Lila"), (30, "Índigo"), (31, "Ámbar"), (32, "Caqui"), (33, "Salmón"), (34, "Caramelo"), (35, "Champagne"), (36, "Gris perla"), (37, "Azul petróleo"), (38, "Verde menta"), (39, "Rosa palo"), (40, "Azul cielo"), (41, "Marrón chocolate"), (42, "Gris plomo"), (43, "Naranja quemado");
+
+update tipdoc set tip="CE"
+where idtidoc =1;
