@@ -55,7 +55,11 @@ VALUES (15, 'cicla', 50, 1);
 
 CALL ProCli(1012345678, 'Juan', 'Pérez', 'Gómez', 123456789, 3001112233, 1);
 
-CALL ProVeh('ABC123', 'Sin novedades', 1012345678, 1, 'carro');
+CALL ProVeh('ABC124', 'Sin novedades', 1012345678, 1, 'carro');
 
-CALL ProTicket(NOW(), 'ABC123', 1, 1);
+CALL ProTicket("2025-05-30 12:00:00", 'ABC123', 1);
+
+CALL ProTicket("2025-05-30 12:00:00", 'ABC124', 1);
+
+CALL MEDIO_PAGO (1,3);
 

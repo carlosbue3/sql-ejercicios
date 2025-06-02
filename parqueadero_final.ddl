@@ -50,12 +50,9 @@ CREATE TABLE ZonParq (
 
 CREATE TABLE Ticket (
     IdTick INT PRIMARY KEY auto_increment,
-    FecIngre TIMESTAMP,
+	FecIngre TIMESTAMP,
     IdPlaca varchar(30),
-    IdMePago INT,
-	IdZonPa INT,
-	ValPag INT,
-    Duracion int
+	IdZonPa INT
 );
 
 CREATE TABLE MedPago (
@@ -63,6 +60,14 @@ CREATE TABLE MedPago (
     TipPa varchar(20)
 );
 
+CREATE TABLE FACTURA(
+	IdFact INT PRIMARY KEY auto_increment,
+	IdTick INT,
+	IdMePago INT,
+	ValPag INT,
+    duracion int,
+    FecEgre timestamp
+);
 
 alter table clientes
 add constraint Fk_IdTiDoc
@@ -85,11 +90,14 @@ alter table ticket
 add constraint Fk_IdZonPa
 foreign key (IdZonPa) references zonparq(IdZonPa);
 
-alter table ticket
-add constraint Fk_IdMePago
-foreign key (IdMePago) references medpago(IdMePago);
-
 alter table vehiculos
 add constraint Fk_IdCli
 foreign key (IdCli) references clientes(IdCli);
 
+alter table FACTURA
+add constraint Fk_IdTICKET
+foreign key (IdTick) references TICKET(IdTick);
+
+alter table FACTURA
+add constraint Fk_IdMePago
+foreign key (IdMePago) references medpago(IdMePago);

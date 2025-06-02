@@ -58,17 +58,33 @@ USE `parqueaderodb`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ProTicket`(
 in FecIngre TIMESTAMP,
 in IPlaca varchar(30),
-in IMePago INT,
 in IZonPa INT
 
 )
 BEGIN
-insert into Ticket(FecIngre,IdPlaca,IdMePago,IdZonPa)
-values (FecIngre,IPlaca,IMePago,IZonPa);
+insert into Ticket(FecIngre,IdPlaca,IdZonPa)
+values (FecIngre,IPlaca,IZonPa);
 END$$
 
 DELIMITER ;
 ;
+
+USE `parqueaderodb`;
+DROP procedure IF EXISTS `parqueaderodb`.`MEDIO_PAGO`;
+;
+
+DELIMITER $$
+USE `parqueaderodb`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `MEDIO_PAGO`(
+IN MEPA INT,
+IN TICK INT
+)
+BEGIN
+ INSERT INTO FACTURA (IDMEPAGO,IdTick)
+ value (MEPA,TICK);
+END$$
+
+DELIMITER ;
 
 
 
